@@ -1,6 +1,6 @@
 # Madanur Consumer Search Portal
 
-APCPDCL Consumer Information System - Access your consumer details instantly.
+Consumer Information System - Access your consumer details instantly.
 
 ## 🚀 Quick Start
 
