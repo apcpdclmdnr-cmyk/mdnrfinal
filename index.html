@@ -3,215 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consumer Search - Madanur APCPDCL</title>
+    <title>Madanur APCPDCL - Consumer Search</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
             padding: 20px;
+            background: #f6f8fa;
+            color: #24292e;
         }
-        
-        .github-container {
-            max-width: 800px;
+        .container {
+            max-width: 900px;
             margin: 0 auto;
         }
-        
-        .github-header {
+        .header {
             text-align: center;
             margin-bottom: 30px;
-            color: white;
-        }
-        
-        .github-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .github-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        .iframe-wrapper {
+            padding: 20px;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden;
-            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        
-        .iframe-container {
+        .header h1 {
+            color: #0366d6;
+            margin-bottom: 10px;
+        }
+        .app-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        iframe {
             width: 100%;
-            height: 700px;
+            height: 650px;
             border: none;
         }
-        
-        .github-info {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .github-info h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .github-info ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .github-info li {
-            padding: 8px 0;
-            border-bottom: 1px solid #ecf0f1;
-        }
-        
-        .github-info li:last-child {
-            border-bottom: none;
-        }
-        
-        .github-info strong {
-            color: #3498db;
-        }
-        
-        .github-footer {
+        .footer {
             text-align: center;
-            color: white;
+            margin-top: 20px;
             padding: 20px;
-        }
-        
-        .github-footer a {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .github-footer a:hover {
-            color: #ecf0f1;
-        }
-        
-        .mobile-warning {
-            display: none;
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            color: #856404;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .github-header h1 {
-                font-size: 2rem;
-            }
-            
-            .iframe-container {
-                height: 600px;
-            }
-            
-            .mobile-warning {
-                display: block;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            
-            .github-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .iframe-container {
-                height: 500px;
-            }
+            color: #586069;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class="github-container">
-        <header class="github-header">
-            <h1>🔍 Madanur Consumer Search</h1>
-            <p>APCPDCL - Consumer Information Portal</p>
-        </header>
-        
-        <div class="mobile-warning">
-            <strong>Mobile Users:</strong> For best experience, rotate your device to landscape mode if the content appears cut off.
+    <div class="container">
+        <div class="header">
+            <h1>Madanur APCPDCL</h1>
+            <p>Consumer Information Search Portal</p>
         </div>
         
-        <div class="github-info">
-            <h2>📋 How to Use</h2>
-            <ul>
-                <li><strong>Step 1:</strong> Enter your <strong>Service Number</strong> in the search box below</li>
-                <li><strong>Step 2:</strong> Click the <strong>"Search"</strong> button</li>
-                <li><strong>Step 3:</strong> View your consumer details instantly</li>
-                <li><strong>Step 4:</strong> Use the <strong>"View Location"</strong> link for navigation</li>
-            </ul>
-        </div>
-        
-        <div class="iframe-wrapper">
+        <div class="app-container">
             <iframe 
-                src="YOUR_DEPLOYED_WEB_APP_URL_HERE" 
-                class="iframe-container"
-                title="Madanur Consumer Search Application"
-                allow="clipboard-write"
-                loading="lazy">
+                src="YOUR_DEPLOYED_WEB_APP_URL_HERE"
+                title="Consumer Search Application">
             </iframe>
         </div>
         
-        <div class="github-info">
-            <h2>ℹ️ About This Service</h2>
-            <ul>
-                <li><strong>Real-time Data:</strong> Direct access to updated consumer records</li>
-                <li><strong>Secure Access:</strong> Your data is protected and secure</li>
-                <li><strong>Mobile Friendly:</strong> Works on all devices and browsers</li>
-                <li><strong>No Installation:</strong> Access directly from your browser</li>
-            </ul>
+        <div class="footer">
+            <p>© 2024 Madanur APCPDCL. Hosted on GitHub Pages.</p>
         </div>
-        
-        <footer class="github-footer">
-            <p>© 2024 Madanur APCPDCL. Powered by Google Apps Script & GitHub Pages.</p>
-            <p>Need help? Contact: <a href="mailto:support@madanur.com">support@madanur.com</a></p>
-        </footer>
     </div>
-
-    <script>
-        // GitHub Pages specific enhancements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add loading indicator
-            const iframe = document.querySelector('.iframe-container');
-            iframe.addEventListener('load', function() {
-                console.log('Consumer search app loaded successfully');
-            });
-            
-            // Error handling for iframe
-            iframe.addEventListener('error', function() {
-                console.error('Failed to load consumer search app');
-            });
-            
-            // GitHub Pages analytics (if you use them)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'page_view', {
-                    'page_title': 'Consumer Search Portal',
-                    'page_location': window.location.href
-                });
-            }
-        });
-    </script>
 </body>
 </html>
