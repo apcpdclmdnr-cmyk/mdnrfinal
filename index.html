@@ -5,32 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madanur Consumer Search - APCPDCL</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 15px;
+            padding: 10px;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            min-height: 95vh;
             display: flex;
             flex-direction: column;
-            min-height: 95vh;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 20px;
             padding: 25px 20px;
             color: white;
         }
@@ -52,6 +45,7 @@
             width: 60px;
             height: 60px;
             border-radius: 8px;
+            object-fit: contain;
         }
         
         .logo-placeholder {
@@ -80,34 +74,32 @@
         
         .instructions {
             background: rgba(255, 255, 255, 0.95);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 20px;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
         }
         
         .instructions h3 {
             color: #0366d6;
-            margin-bottom: 12px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
         
         .steps {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 10px;
         }
         
         .step {
             background: #0366d6;
             color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
             font-weight: 500;
         }
         
@@ -134,13 +126,12 @@
             font-size: 0.9rem;
         }
         
-        .footer a {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        /* Mobile Optimizations */
+        /* Hide instructions on mobile */
         @media (max-width: 768px) {
+            .instructions {
+                display: none;
+            }
+            
             body {
                 padding: 10px;
             }
@@ -168,21 +159,6 @@
                 font-size: 1rem;
             }
             
-            .instructions {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-            
-            .steps {
-                flex-direction: column;
-                gap: 8px;
-            }
-            
-            .step {
-                padding: 6px 12px;
-                font-size: 0.85rem;
-            }
-            
             .app-iframe {
                 height: 75vh;
                 min-height: 500px;
@@ -201,7 +177,6 @@
             
             .header {
                 padding: 20px 15px;
-                margin-bottom: 15px;
             }
             
             .logo {
@@ -219,10 +194,6 @@
                 height: 80vh;
                 min-height: 450px;
             }
-            
-            .instructions h3 {
-                font-size: 1.1rem;
-            }
         }
         
         /* Landscape mode for mobile */
@@ -232,8 +203,8 @@
                 min-height: 300px;
             }
             
-            .instructions {
-                display: none;
+            .header {
+                padding: 15px;
             }
             
             .logo {
@@ -246,6 +217,10 @@
                 width: 35px;
                 height: 35px;
             }
+            
+            .header h1 {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
@@ -253,15 +228,14 @@
     <div class="container">
         <header class="header">
             <div class="logo">
-                <!-- Replace this with your actual logo -->
-                <div class="logo-placeholder">AP</div>
-                <!-- OR if you have an image: -->
-                <!-- <img src="your-logo.png" alt="APCPDCL Logo"> -->
+                <!-- Replace with your logo -->
+                <img src="logo.png" alt="APCPDCL Logo">
             </div>
             <h1>Madanur Consumer Search</h1>
             <p>APCPDCL - Consumer Information Portal</p>
         </header>
 
+        <!-- Instructions will be hidden on mobile -->
         <div class="instructions">
             <h3>Quick Guide</h3>
             <div class="steps">
@@ -273,7 +247,7 @@
 
         <div class="app-container">
             <iframe 
-                src="https://script.google.com/macros/s/AKfycbwpuZLHVYbAjFc0n74aKzMwVzm5x4F_q9ofU_M1Iew1k1X488S3h6_harh4O4yXC8d-/exec" 
+                src="YOUR_GOOGLE_APPS_SCRIPT_URL_HERE" 
                 class="app-iframe"
                 title="Madanur Consumer Search Application"
                 allow="clipboard-write"
@@ -282,27 +256,8 @@
         </div>
 
         <footer class="footer">
-            <p>© 2024 Madanur APCPDCL. Powered by Google Apps Script & GitHub Pages.</p>
-            <p>Need help? <a href="mailto:support@madanur-apcpdcl.com">Contact Support</a></p>
+            <p>© 2024 Madanur APCPDCL</p>
         </footer>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Madanur Consumer Search Portal loaded');
-            
-            function adjustIframeHeight() {
-                const iframe = document.querySelector('.app-iframe');
-                if (window.innerHeight < 600) {
-                    iframe.style.height = '85vh';
-                } else {
-                    iframe.style.height = '70vh';
-                }
-            }
-            
-            window.addEventListener('resize', adjustIframeHeight);
-            adjustIframeHeight();
-        });
-    </script>
 </body>
 </html>
