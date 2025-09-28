@@ -3,85 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madanur Consumer Information</title>
+    <title>Madanur Consumer Search - APCPDCL</title>
     <style>
-/* Hide Google Apps Script headers and footers */
-iframe {
-  transform: scale(0.98);
-  transform-origin: top center;
-}
-
-/* Alternative: Use clipping */
-.iframe-container {
-  overflow: hidden;
-  height: 600px;
-}
-
-.iframe-container iframe {
-  margin-top: -60px; /* Adjust this value based on what you see */
-  height: 660px;
-  pointer-events: auto;
-}
-
-/* Or use absolute positioning */
-.iframe-wrapper {
-  position: relative;
-  height: 600px;
-  overflow: hidden;
-}
-
-.iframe-wrapper iframe {
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  height: 650px;
-  border: none;
-}
-</style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 95vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            opacity: 0.95;
+            font-size: 1rem;
+        }
+        
+        .app-container {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .app-iframe {
+            width: 100%;
+            height: 75vh;
+            min-height: 550px;
+            border: none;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.6rem; }
+            .header p { font-size: 0.9rem; }
+            .app-iframe { 
+                height: 80vh; 
+                min-height: 450px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body { padding: 5px; }
+            .header { padding: 15px 10px; }
+            .header h1 { font-size: 1.4rem; }
+            .app-iframe { 
+                height: 85vh; 
+                min-height: 400px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>🔍 Madanur Consumer Information</h1>
-            <p>Consumer Information Portal</p>
+            <h1>🔍 Madanur Consumer Search</h1>
+            <p>APCPDCL Consumer Information Portal</p>
         </header>
 
-       
         <div class="app-container">
             <iframe 
-                src="https://script.google.com/macros/s/AKfycbyvIpX9jNzB3x9TEiGk_yaVWtG4R_qBLWPI50uM8ZvIeHj6S1_fymPPnYwz_z72bZa9/exec" 
+                src="https://script.google.com/macros/s/AKfycbwpuZLHVYbAjFc0n74aKzMwVzm5x4F_q9ofU_M1Iew1k1X488S3h6_harh4O4yXC8d-/exec"
                 class="app-iframe"
-                title="Madanur Consumer Search Application"
-                allow="clipboard-write"
-                loading="eager">
+                title="Consumer Search Application"
+                allow="clipboard-write">
             </iframe>
         </div>
-                <footer class="footer">
-            <p>© 2024 Madanur APCPDCL. Powered by Google Apps Script & GitHub Pages.</p>
-            <p>Need help? Contact: <a href="mailto:support@madanur-apcpdcl.com">support@madanur-apcpdcl.com</a></p>
-            <p style="margin-top: 10px; font-size: 0.9rem; color: #6a737d;">
-                This portal is hosted on GitHub Pages and connects securely to Google Apps Script.
-            </p>
+
+        <footer class="footer">
+            <p>© 2024 Madanur APCPDCL</p>
         </footer>
     </div>
-
-    <script>
-        // GitHub Pages specific enhancements
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Madanur Consumer Search Portal loaded');
-            
-            // Add iframe load event handler
-            const iframe = document.querySelector('.app-iframe');
-            iframe.addEventListener('load', function() {
-                console.log('Consumer search app loaded successfully');
-            });
-            
-            iframe.addEventListener('error', function() {
-                console.error('Failed to load consumer search app');
-                // You could show an error message here if needed
-            });
-        });
-    </script>
 </body>
 </html>
