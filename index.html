@@ -5,150 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madanur Consumer Search - APCPDCL</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
-            background: #f6f8fa;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 30px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid #e1e4e8;
-        }
-        
-        .header h1 {
-            color: #0366d6;
-            margin-bottom: 15px;
-            font-size: 2.5rem;
-        }
-        
-        .header p {
-            font-size: 1.2rem;
-            color: #586069;
-        }
-        
-        .info-section {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-            border: 1px solid #e1e4e8;
-        }
-        
-        .info-section h2 {
-            color: #0366d6;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #0366d6;
-            padding-bottom: 8px;
-        }
-        
-        .steps-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .steps-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eaecef;
-            display: flex;
-            align-items: center;
-        }
-        
-        .steps-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .step-number {
-            background: #0366d6;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-weight: bold;
-        }
-        
-        .app-container {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 25px;
-            border: 1px solid #e1e4e8;
-        }
-        
-        .app-iframe {
-            width: 100%;
-            height: 650px;
-            border: none;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 25px;
-            color: #586069;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border: 1px solid #e1e4e8;
-        }
-        
-        .footer a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        
-        .error-message {
-            background: #ffebe9;
-            border: 1px solid #ff8182;
-            color: #cf222e;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .app-iframe {
-                height: 500px;
-            }
-            
-            body {
-                padding: 10px;
-            }
-        }
-    </style>
+/* Hide Google Apps Script headers and footers */
+iframe {
+  transform: scale(0.98);
+  transform-origin: top center;
+}
+
+/* Alternative: Use clipping */
+.iframe-container {
+  overflow: hidden;
+  height: 600px;
+}
+
+.iframe-container iframe {
+  margin-top: -60px; /* Adjust this value based on what you see */
+  height: 660px;
+  pointer-events: auto;
+}
+
+/* Or use absolute positioning */
+.iframe-wrapper {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 650px;
+  border: none;
+}
+</style>
 </head>
 <body>
     <div class="container">
