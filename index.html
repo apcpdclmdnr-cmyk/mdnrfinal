@@ -261,23 +261,3 @@
     </div>
 </body>
 </html>
-// Add this method to your MainActivity
-private void addJavaScriptInterface() {
-    webView.addJavascriptInterface(new Object() {
-        @android.webkit.JavascriptInterface
-        public void openMap(String url) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                        intent.setPackage("com.google.android.apps.maps");
-                        startActivity(intent);
-                    } catch (Exception e) {
-                        Log.e(TAG, "Error opening map via JS interface: " + e.getMessage());
-                    }
-                }
-            });
-        }
-    }, "Android");
-}
