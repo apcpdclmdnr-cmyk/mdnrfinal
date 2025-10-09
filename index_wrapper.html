@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madanur Consumer Information Portal</title>
+    <style>
+        /* --- Styles for the wrapper/frame (NOT the App itself) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 95vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 25px 20px;
+            color: white;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px auto;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: 3px solid rgba(255,255,255,0.3);
+        }
+        
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+        
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: #0366d6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .instructions h3 {
+            color: #0366d6;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .step {
+            background: #0366d6;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .app-container {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .app-iframe {
+            width: 100%;
+            height: 70vh;
+            min-height: 600px;
+            border: none;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        /* Hide instructions on mobile */
+        @media (max-width: 768px) {
+            .instructions {
+                display: none;
+            }
+            
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                min-height: 92vh;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 12px;
+            }
+            
+            .logo img, .logo-placeholder {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .app-iframe {
+                height: 75vh;
+                min-height: 500px;
+            }
+            
+            .footer {
+                padding: 15px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo img, .logo-placeholder {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .app-iframe {
+                height: 80vh;
+                min-height: 450px;
+            }
+        }
+        
+        /* Landscape mode for mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .app-iframe {
+                height: 85vh;
+                min-height: 300px;
+            }
+            
+            .header {
+                padding: 15px;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 8px;
+            }
+            
+            .logo img, .logo-placeholder {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .header h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <!-- IMPORTANT: Ensure 'MADANUR.png' is in your GitHub repo! -->
+                <img src="MADANUR.png" alt="APCPDCL Logo">
+            </div>
+            <h1>Madanur Consumer Search</h1>
+            <p>APCPDCL - Consumer Information Portal</p>
+        </header>
+
+        <!-- Instructions will be hidden on mobile -->
+        <div class="instructions">
+            <h3>Quick Guide</h3>
+            <div class="steps">
+                <div class="step">1. Enter Service No</div>
+                <div class="step">2. Click Search</div>
+                <div class="step">3. View Details</div>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <iframe 
+                <!-- !!! IMPORTANT: The 'src' value has been updated with your new Google Apps Script Web App Deployment URL !!! -->
+                src="https://script.google.com/macros/s/AKfycbxNwBIad0WIWmOx_MWTuMA6-bXFi3GsTMgNRjj_gfjsI-k4IXL8aKdoI-9feWa8qcCf/exec" 
+                class="app-iframe"
+                title="Madanur Consumer Search Application"
+                allow="clipboard-write"
+                loading="eager"
+                
+                <!-- SANDBOX ATTRIBUTE IS IN PLACE TO ALLOW CROSS-ORIGIN SCRIPT EXECUTION -->
+                sandbox="allow-scripts allow-forms allow-same-origin allow-popups">
+            </iframe>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 Madanur APCPDCL</p>
+        </footer>
+    </div>
+</body>
+</html>
