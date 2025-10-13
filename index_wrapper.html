@@ -20,33 +20,49 @@
             src="https://script.google.com/macros/s/AKfycbwcYQUYnpYQmtL5RhsDBbUujXtjpA7laWX9Np15KQ-LZwRQo7F3VCEUGKWqN2nQLCIZ/exec">
     </iframe>
 
-    <script>
-        // Use a slight delay to ensure the parent DOM has settled
-        setTimeout(function() {
-            try {
-                // Select and hide the banner element that is injected 
-                // into the parent page *around* the iframe.
-                // The exact selector may change, but this targets common banner IDs/Classes.
-                const warningBar = document.getElementById('warning');
-                if (warningBar) {
-                    warningBar.style.display = 'none';
-                    warningBar.style.height = '0';
-                }
-                
-                // This selector also targets a common wrapper element for the banner
-                const bannerWrapper = document.querySelector('.iframe-warning-bar-content');
-                if (bannerWrapper) {
-                     bannerWrapper.style.display = 'none';
-                     bannerWrapper.style.height = '0';
-                }
-
-                // If the app is fully within the iframe, you may not need the above,
-                // but this ensures the iframe takes the full view.
-                document.getElementById('gas-iframe').style.height = '100vh';
-            } catch(e) {
-                console.log("Error trying to hide banner. It may not exist or the iframe is cross-domain protected.");
+<script>
+    function hideBanner() {
+        try {
+            // Attempt to find the standard 'warning' div ID
+            const warningBar = document.getElementById('warning');
+            if (warningBar) {
+                warningBar.style.display = 'none';
+                warningBar.style.height = '0';
+                console.log("Banner hidden by ID 'warning'.");
             }
-        }, 1000); 
-    </script>
+            
+            // Attempt to find and hide the common container class
+            const container = document.querySelector('.iframe-warning-bar-content');
+            if (container) {
+                container.style.display = 'none';
+                container.style.height = '0';
+                console.log("Banner hidden by class 'iframe-warning-bar-content'.");
+            }
+
+            // Attempt to find the specific element that contains the 'created by a Google Apps Script user' text.
+            // Google often wraps the banner content in a specific div within the parent document.
+            // This is a more generic search for a div containing "created by a Google Apps Script user"
+            const allDivs = document.querySelectorAll('div');
+            allDivs.forEach(div => {
+                if (div.textContent.includes('created by a Google Apps Script user') || div.textContent.includes('not by Google')) {
+                    div.style.display = 'none';
+                    div.style.height = '0';
+                    console.log("Banner hidden by content match.");
+                }
+            });
+
+            // Ensure the iframe takes up the full space
+            document.getElementById('gas-iframe').style.height = '100vh';
+
+        } catch(e) {
+            console.error("Error during banner hiding attempt: ", e);
+        }
+    }
+
+    // Run the function after a short delay to ensure the page has loaded and injected the banner.
+    window.onload = function() {
+        setTimeout(hideBanner, 300); // 300ms delay
+    };
+</script>
 </body>
 </html>
