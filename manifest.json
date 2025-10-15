@@ -1,0 +1,23 @@
+{
+  "name": "APCPDCL MADANUR Consumer Portal",
+  "short_name": "MDNR",
+  "id": "mdnr",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#2196F3",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/mdnr-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/mdnr-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
